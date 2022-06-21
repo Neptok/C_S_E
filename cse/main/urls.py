@@ -9,5 +9,7 @@ urlpatterns = [
     path('admission',views.admission,name="admission page"),
     path('contactus',views.contact,name="contact page"),
     path('plans',views.plans,name="plans page"),
-    path('patners',views.patners,name="patners page")
+    path('patners',views.patners,name="patners page"),
+    path('mail',views.mailtest,name='mail page')
+
 ]
