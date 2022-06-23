@@ -1,3 +1,4 @@
+import re
 from django.http import HttpResponse
 from django.shortcuts import render
 from main import mailjet
@@ -5,11 +6,15 @@ from main import mailjet
 
 # Create your views here.
 def landingPage(request):
-    return HttpResponse("Landingpage")
+    return render(request,'index.html')
+def courses(request):
+    return render(request,'courses.html')
+def about(request):
+    return render(request,'about.html')
 def admission(request):
     return HttpResponse("admissionpage")
 def contact(request):
-    return HttpResponse(" contactpage")
+    return render(request,'contact.html')
 def plans(request):
     return HttpResponse("planspage")
 def patners(request):
