@@ -137,4 +137,7 @@ GitHub.sublime-settings
 .history
 
 authDetail.py
-main/static/images/**
+**/static/images/*.jpg
+**/static/images/*.jpeg
+**/static/images/*.pdf
+**/static/images/*.png
