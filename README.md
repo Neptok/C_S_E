@@ -14,3 +14,18 @@ Front-end Developer  >> Monu Kumar
 Setup :
         i.Download image folder from (https://drive.google.com/drive/folders/1jJDHn4kyex2BwJi3_emih3KpT86ZaXIo?usp=sharing) and add in cse/main/static/ path
         
+
+        ii. Here i have used mailjet api for mail system . Get a account and then make authDetail.py in BASE_DIR and add the following code 
+        '''  
+        
+        apikey = "our api key"
+            secreatkey = "your secreat key"
+            service_provider = "https://app.mailjet.com"
+
+            def getKey():
+                return apikey
+            def getSecreat():
+                return secreatkey
+
+
+        '''
