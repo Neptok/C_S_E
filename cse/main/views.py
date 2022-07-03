@@ -10,15 +10,15 @@ def courses(request):
     return render(request,'courses.html')
 def about(request):
     return render(request,'about.html')
-def admission(request):
-    return HttpResponse("admissionpage")
+def admissionForm(request):
+    return render(request,'form.html')
 def contact(request):
     return render(request,'contact.html')
 def plans(request):
     return HttpResponse("planspage")
 def patners(request):
     return HttpResponse("patnerspage")
-
+  
 
 def mailtest(self):
     mailjet.sendMail()
