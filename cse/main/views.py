@@ -3,6 +3,8 @@ from django.shortcuts import render
 from main import mailjet
 
 
+CSEMailadd = "anjalishahjhau12345@gmail.com"
+
 # Create your views here.
 def landingPage(request):
     return render(request,'index.html')
@@ -13,7 +15,29 @@ def about(request):
 def admissionForm(request):
     return render(request,'form.html')
 def contact(request):
-    return render(request,'contact.html')
+    if request.method == 'POST':
+        fname = request.POST.get('fname')
+        lname = request.POST.get('lname')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+         
+        messageBody = f'''
+
+            Some one trying  Contact u 
+            Name : {fname} {lname}
+            Email : {email}
+            subject : {subject}
+            Message : {message}
+        '''
+        print(messageBody)
+        cursor = mailjet.sendMail(CSEMailadd,'CSE Contact form','Someone trying to contact ',  messageBody)
+
+        return HttpResponse(f"{cursor}")
+    else:
+        return render(request,'contact.html')
+
+
 def plans(request):
     return HttpResponse("planspage")
 def patners(request):
@@ -21,5 +45,6 @@ def patners(request):
   
 
 def mailtest(self):
-    mailjet.sendMail()
-    return HttpResponse("Mail sent check your mail")
+    cursor = mailjet.sendMail(CSEMailadd,'Got a mail','mera naam joker','Hello bro these is mailjet')
+
+    return HttpResponse(f"{cursor}")

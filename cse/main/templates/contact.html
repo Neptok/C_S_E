@@ -6,7 +6,7 @@
 <aside id="cse-hero">
 	<div class="flexslider">
 		<ul class="slides">
-		   <li style="background-image: url({% static 'images/cs.jpg' %});x">
+		   <li style="background-image: url({% static 'images/cs.jpg' %});">
 			   <div class="overlay-gradient"></div>
 			   <div class="container">
 				   <div class="row">
@@ -40,36 +40,37 @@
 			</div>
 			<div class="col-md-6 animate-box">
 				<h3>Get In Touch</h3>
-				<form action="#">
+				<form action="/contactus" method="post">
+					{% csrf_token %}
 					<div class="row form-group">
 						<div class="col-md-6">
 							<!-- <label for="fname">First Name</label> -->
-							<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+							<input type="text" id="fname" name = 'fname' class="form-control" placeholder="Your firstname">
 						</div>
 						<div class="col-md-6">
 							<!-- <label for="lname">Last Name</label> -->
-							<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+							<input type="text" id="lname" class="form-control" name="lname" placeholder="Your lastname">
 						</div>
 					</div>
 
 					<div class="row form-group">
 						<div class="col-md-12">
 							<!-- <label for="email">Email</label> -->
-							<input type="text" id="email" class="form-control" placeholder="Your email address">
+							<input type="text" id="email" class="form-control" name="email" placeholder="Your email address">
 						</div>
 					</div>
 
 					<div class="row form-group">
 						<div class="col-md-12">
 							<!-- <label for="subject">Subject</label> -->
-							<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
+							<input type="text" id="subject" class="form-control" name="subject" placeholder="Your subject of this message">
 						</div>
 					</div>
 
 					<div class="row form-group">
 						<div class="col-md-12">
 							<!-- <label for="message">Message</label> -->
-							<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
+							<textarea name="message" id="message" cols="30" rows="10" name="message" class="form-control" placeholder="Say something about us"></textarea>
 						</div>
 					</div>
 					<div class="form-group">
