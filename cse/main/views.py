@@ -7,14 +7,30 @@ CSEMailadd = "anjalishahjhau12345@gmail.com"
 
 # Create your views here.
 def landingPage(request):
-    return render(request,'index.html')
+    var = {
+        'home':'active'
+    }
+    return render(request,'index.html',var)
 def courses(request):
-    return render(request,'courses.html')
+    var = {
+        'courses':'active'
+    }
+    return render(request,'courses.html',var)
 def about(request):
-    return render(request,'about.html')
+    var = {
+        'about':'active'
+    }
+    return render(request,'about.html',var)
 def admissionForm(request):
-    return render(request,'form.html')
+    var = {
+        'admission':'active'
+    }
+    return render(request,'form.html',var)
 def contact(request):
+    var = {
+        'contact':'active'
+        
+    }
     if request.method == 'POST':
         fname = request.POST.get('fname')
         lname = request.POST.get('lname')
@@ -35,12 +51,18 @@ def contact(request):
 
         return HttpResponse(f"{cursor}")
     else:
-        return render(request,'contact.html')
+        return render(request,'contact.html',var)
 
 
 def plans(request):
+    var = {
+        'plans':'active'
+    }
     return HttpResponse("planspage")
 def patners(request):
+    var = {
+        'patners':'active'
+    }
     return HttpResponse("patnerspage")
   
 
