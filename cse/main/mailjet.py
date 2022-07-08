@@ -8,7 +8,7 @@ def sendMail(reciever,heading = 'Got mail from someone', subject = "default body
     'Messages': [
         {
         "From": {
-            "Email": "helloworldearth8@gmail.com",
+            "Email": "csebrtmail09@gmail.com",
             "Name": heading
         },
         "To": [
@@ -27,7 +27,7 @@ def sendMail(reciever,heading = 'Got mail from someone', subject = "default body
     result = mailjet.send.create(data=data)
     # print(result.status_code)
     if str(result.status_code) == '200':
-        return 'Mail sent sucessfull'
+        return 'sucessfull'
     else:
         return "Something went wrong try later"
 
